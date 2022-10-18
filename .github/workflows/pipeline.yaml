@@ -25,7 +25,9 @@ jobs:
           rev=$(git rev-parse --short HEAD)
           docker build . -t jonlar-private
           docker tag jonlar-private:latest 244530008913.dkr.ecr.eu-west-1.amazonaws.com/jonlar-private:$rev
+          docker tag jonlar-private:latest 244530008913.dkr.ecr.eu-west-1.amazonaws.com/jonlar-private:latest
           docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/jonlar-private:$rev
+          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/jonlar-private:latest
           
 
   terraform:
